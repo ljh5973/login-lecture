@@ -36,11 +36,14 @@ const opts={
 }
 
 const logger=createLogger({
-    transports: [opts.file
-    ]
+    transports: [opts.file]
 });
 
 if(process.env.NODE_ENV !=="production"){
     logger.add(opts.console);
 }
+
+logger.stream={
+    write: (message)=>logger.info(message),
+};
 module.exports=logger;
