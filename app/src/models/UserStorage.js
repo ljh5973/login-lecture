@@ -5,8 +5,9 @@ class UserStorage {
 
     static getUserInfo(id) {
         return new Promise((resolve, reject)=>{
-            const query="SELECT * FROM abc where id =?;";
+            const query="SELECT * FROM users where id =?;";
             db.query(query, [id], (err, data)=>{
+                console.log(data[0]);
             if (err) reject(`${err}`);
             else resolve(data[0]);
             });
