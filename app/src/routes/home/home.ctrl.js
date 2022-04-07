@@ -29,13 +29,13 @@ const process = {
 
                 });
             }
-            return res.json({
-                success: false,
-                msg: "로그인에 실패했습니다"
 
-            });
         };
+        return res.json({
+            success: false,
+            msg: "로그인에 실패했습니다"
 
+        });
     }
 }
 
