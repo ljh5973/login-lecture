@@ -15,9 +15,11 @@ function login(){
 
     fetch("/login", {
         method:"POST",
-        header:{
+        headers:{
             "Content-type": "application/json"
         },
         body: JSON.stringify(req)
-    })
+    }).then((res)=> res.json()).then(console.log);
+
+  
 };
